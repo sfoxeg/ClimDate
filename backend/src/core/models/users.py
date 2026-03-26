@@ -24,9 +24,10 @@ class UsersOrm(IdPKMixin, CreatedAtMixin, UpdatedAtMixin, Base):
         Enum(
             BanStatus,
             name="ban_status",
+            values_callable=lambda obj: [e.value for e in obj],
         ),
-        default=0,
-        server_default="not_banned",
+        default=BanStatus.NOT_BANNED.value,
+        server_default=BanStatus.NOT_BANNED.value,
         nullable=False,
     )
     banned_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)

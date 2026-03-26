@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class BanStatus(Enum):
-    not_banned = 0
-    read_only = 1
-    temporary = 2
-    permanent = 3
+    NOT_BANNED = "not_banned"
+    READ_ONLY = "read_only"
+    TEMPORARY = "temporary"
+    PERMANENT = "permanent"
