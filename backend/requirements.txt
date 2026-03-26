@@ -1,0 +1,7 @@
+fastapi
+pydantic_settings
+pydantic[email]
+uvicorn
+sqlalchemy
+asyncpg
+alembic
