@@ -23,6 +23,7 @@ class UsersOrm(IdPKMixin, CreatedAtMixin, UpdatedAtMixin, Base):
     banned_status: Mapped[BanStatus] = mapped_column(
         Enum(
             BanStatus,
+            name="ban_status",
         ),
         default=0,
         server_default="not_banned",
