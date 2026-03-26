@@ -1,5 +1,5 @@
 from sqlalchemy import select
-from core.models.cities import CitiesOrm
+from core.models import CitiesOrm
 from core.database import new_session
 from api.v1.cities.schemas import SCityAdd, SCity, SCityId
 
@@ -21,5 +21,7 @@ class CitiesRepository:
             query = select(CitiesOrm)
             result = await session.execute(query)
             cities_models = result.scalars().all()
-            cities_schemas = [SCity.model_validate(city_model) for city_model in cities_models]
+            cities_schemas = [
+                SCity.model_validate(city_model) for city_model in cities_models
+            ]
             return cities_schemas

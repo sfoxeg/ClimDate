@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
-from core.settings import AppSettings, DBSettings
+from .app_settings import AppSettings
+from .db_settings import DBSettings
 
 
 class Settings(BaseSettings):

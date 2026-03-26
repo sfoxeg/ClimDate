@@ -1,5 +1,3 @@
-from .app_settings import AppSettings
-from .db_settings import DBSettings
-from .settings import Settings
+from .settings import Settings as __Settings
 
-settings = Settings()
+settings = __Settings()
