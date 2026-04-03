@@ -11,11 +11,11 @@ class DBSettings(BaseModel):
     url: str = (
         f"postgresql+asyncpg://{__user}:{__password}@{__host}:{__port}/{__dbname}"
     )
-    expire_on_commit: bool = False
-    echo: bool = False
-    echo_pool: bool = False
-    pool_size: int = 50
-    max_overflow: int = 10
+    expire_on_commit: bool = bool(os.environ.get("POSTGRES_EXPIRE_ON_COMMIT", False))
+    echo: bool = bool(os.environ.get("POSTGRES_ECHO", False))
+    echo_pool: bool = bool(os.environ.get("POSTGRES_ECHO_POOL", False))
+    pool_size: int = bool(os.environ.get("POSTGRES_POOL_SIZE", 10))
+    max_overflow: int = bool(os.environ.get("POSTGRES_MAX_OVERFLOW", 0))
 
     naming_convention: dict[str, str] = {
         "ix": "ix_%(column_0_label)s",
