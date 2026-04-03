@@ -2,9 +2,9 @@ from datetime import datetime
 from typing import Optional
 from sqlalchemy import Boolean, Enum, DateTime, String
 from sqlalchemy.orm import Mapped, mapped_column
-from core.types import BanStatus
-from core.models.mixins import IdPKMixin, CreatedAtMixin, UpdatedAtMixin
 from core.models import Base
+from core.models.mixins import IdPKMixin, CreatedAtMixin, UpdatedAtMixin
+from core.types import BanStatus
 
 
 class UsersOrm(IdPKMixin, CreatedAtMixin, UpdatedAtMixin, Base):
