@@ -6,4 +6,4 @@ from core.models.mixins import IdPKMixin
 
 class CitiesOrm(IdPKMixin, Base):
     __tablename__ = "cities"
-    name: Mapped[str] = mapped_column(String(30))
+    name: Mapped[str] = mapped_column(String(30), nullable=False)
