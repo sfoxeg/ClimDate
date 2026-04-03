@@ -6,3 +6,6 @@ from .db_settings import DBSettings
 class Settings(BaseSettings):
     app: AppSettings = AppSettings()
     db: DBSettings = DBSettings()
+
+
+settings = Settings()
