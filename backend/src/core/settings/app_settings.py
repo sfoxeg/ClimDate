@@ -1,5 +1,6 @@
 import os
 from pydantic import BaseModel
+from core.settings.api_settings import APISettings
 
 
 class AppSettings(BaseModel):
@@ -7,3 +8,4 @@ class AppSettings(BaseModel):
     port: int = int(os.environ.get("PORT", 8000))
     reload: bool = bool(os.environ.get("RELOAD", False))
     log_level: str = os.environ.get("LOG_LEVEL", "INFO")
+    api: APISettings = APISettings()
