@@ -7,7 +7,7 @@ class Route(BaseModel):
     tags: list[str | Enum] = []
 
 
-class APIv1Settings(BaseModel):
+class APIv1Settings(Route):
     name: str = "API v1"
     version: str = "v1"
     prefix: str = f"/{version}"
