@@ -4,5 +4,5 @@ router: APIRouter = APIRouter()
 
 
 @router.get("")
-async def get_cities():
+async def get_cities() -> str:
     return "Sss"

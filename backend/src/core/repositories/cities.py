@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from core.models import CitiesOrm
 from core.database import new_session
-from api.v1.cities.schemas import SCityAdd, SCity, SCityId
+from core.schemas import SCityAdd, SCityId, SCity
 
 
 class CitiesRepository:

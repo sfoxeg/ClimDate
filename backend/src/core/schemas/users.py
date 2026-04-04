@@ -1,11 +1,14 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 
 
 class SUserAuth(BaseModel):
     email: EmailStr
     password: str
+
+
+SUserReg = SUserAuth
 
 
 class SUser(SUserAuth):

@@ -1,13 +1,14 @@
 from fastapi import APIRouter
 from fastapi.params import Depends
-from api.v1.cities.repository import CitiesRepository
-from api.v1.cities.schemas import SCity, SCityAdd, SCityId
+from starlette import status
 from typing import Annotated
+from core.repositories import CitiesRepository
+from core.schemas import SCityId, SCity, SCityAdd
 
 router: APIRouter = APIRouter()
 
 
-@router.post("")
+@router.post("", status_code=status.HTTP_201_CREATED)
 async def add_city(city: Annotated[SCityAdd, Depends()]) -> SCityId:
     return await CitiesRepository.add_one(city)
 

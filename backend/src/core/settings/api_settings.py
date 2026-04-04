@@ -15,6 +15,7 @@ class APIv1Settings(Route):
 
     """Параметры ручек"""
     cities: Route = Route(prefix="/cities", tags=["Города"])
+    auth: Route = Route(prefix="/auth", tags=["Аутентификация"])
     users: Route = Route(prefix="/users", tags=["Пользователи"])
 
 
