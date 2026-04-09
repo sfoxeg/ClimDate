@@ -6,7 +6,7 @@ from core.settings import settings
 
 app = FastAPI()
 app.include_router(router)
-app.add_middleware(CORSMiddleware, allow_origins=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=settings.app.cors_allow)
 
 if __name__ == "__main__":
     uvicorn.run(
