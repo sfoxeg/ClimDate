@@ -17,8 +17,7 @@ dist/
 *.py,cover
 .cache/
 
-# Файлы *.py,cover не несут никакого смысла
-*.py,cover
-
 # Контрольные точки в Jupyter notebook лучше оставить в стороне
 .ipynb_checkpoints
+
+backend/src/migrations/versions/*
