@@ -1,0 +1,31 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: rgb(27, 30, 36);
+    --background: rgb(var(--bgc-light));
+    --background-rgba: rgba(var(--bgc-dark), .8);
+    --background-content: rgb(255, 255, 255);
+    --a-color: #213366;
+    --h-color: rgb(68, 72, 80);
+    --color-navbar: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --color: rgb(224, 227, 234);
+    --background: rgb(var(--bgc-dark));
+    --background-rgba: rgba(var(--bgc-light), .8);
+    --background-content: rgb(38, 43, 48);
+    --a-color: #dcdee5;
+    --a-color-hover: red;
+    --h-color: rgb(185, 189, 199);
+    --color-navbar: #262b30;
+  }
+}
+
+
+body {
+  background: var(--background);
+  color: var(--color);
+  font-size: var(--font-size);
+}
