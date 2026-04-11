@@ -33,7 +33,7 @@
       flex-direction: column;
       justify-content: center;
       row-gap: 3rem;
-      background-color: var(--color-gray);
+      background-color: var(--navbar-color);
       transition-duration: var(--transition-duration);
 
       &:not(.is-active) {
