@@ -2,18 +2,15 @@ import './Header.scss'
 import logoImage from '@/assets/images/logo.png'
 import clsx from 'clsx'
 import {useState} from 'react'
+import { NavLink } from 'react-router-dom';
 
 function Header() {
 
-    const isLogin = false
-
     const menuItems = [
         {label: 'Главная', href: '/'},
-        {label: 'Поиск', href: '#!'},
-        {label: 'Сообщения', href: '#!'},
+        {label: 'Поиск', href: '/search'},
+        {label: 'Сообщения', href: '/mess'},
     ]
-
-    const url = window.location.pathname
 
     const [isActive, setIsActive] = useState(false)
 
@@ -32,15 +29,12 @@ function Header() {
                         <ul className="header__menu-list">
                             {menuItems.map(({label, href}) => (
                                 <li className="header__menu-item" key={label}>
-                                    <a
-                                        className={clsx(
-                                            'header__menu-link',
-                                            href === url && 'is-active'
-                                        )}
-                                        href={href}
+                                    <NavLink
+                                        className='header__menu-link'
+                                        to={href}
                                     >
                                         {label}
-                                    </a>
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>
@@ -48,13 +42,13 @@ function Header() {
                     <nav className="header__-menu">
                         <ul className='header__menu-list'>
                             <li className='header__menu-item'>
-                                <a className='header__menu-link auth' href="#!">Вход</a>
+                                <NavLink className='header__menu-link auth' to="/login">Вход</NavLink>
                             </li>
                             <li className='header__menu-item'>
-                                <a className='header__menu-link auth' href="#!">Регистрация</a>
+                                <NavLink className='header__menu-link auth' to="/register">Регистрация</NavLink>
                             </li>
                             <li className='header__menu-item'>
-                                <a className='header__menu-link auth' href="#!">Профиль</a>
+                                <NavLink className='header__menu-link auth' to="/profile">Профиль</NavLink>
                             </li>
                         </ul>
                     </nav>

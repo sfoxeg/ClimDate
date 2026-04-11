@@ -84,8 +84,12 @@
         background-color: var(--a-hover-color);
       }
 
-      &.is-active {
+      &.active {
         color: var(--a-hover-color);
+
+        @include hover {
+          color: var(--a-color);
+        }
       }
 
       &.auth {
