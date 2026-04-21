@@ -1,6 +1,6 @@
 import os
 from pydantic import BaseModel
-from core.settings.api_settings import APISettings
+from .api_settings import APISettings
 
 
 class AppSettings(BaseModel):
