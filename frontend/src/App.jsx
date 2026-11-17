@@ -66,7 +66,7 @@ function AuthPage({ mode }) {
         event.preventDefault(); setError(''); setBusy(true)
         try {
             const params = new URLSearchParams({ email, password })
-            const result = await request(`/auth/${isRegister ? 'register' : 'login'}`, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: params })
+            const result = await request(`/auth/${isRegister ? 'register' : 'login'}?${params}`, { method: 'POST' })
             if (result.token) { localStorage.setItem('climdate_token', result.token); localStorage.setItem('climdate_email', email); navigate('/profile') }
             else if (isRegister) navigate('/login', { state: { registered: true } })
         } catch (err) { setError(err.message) } finally { setBusy(false) }
